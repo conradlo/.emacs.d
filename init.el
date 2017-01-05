@@ -38,6 +38,15 @@
 (setq mouse-wheel-scroll-amount '(1 ((shift) . 1) ((control) . nil)))
 (setq mouse-wheel-progressive-speed nil)
 
+;; programming
+(use-package js2-mode
+  :ensure t)
+(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
+(setq js2-basic-offset 2)
+
+(global-linum-mode t)
+(set-face-foreground 'linum "#212931")
+
 ;; version control
 (use-package magit
   :ensure t
@@ -82,7 +91,7 @@
     ("607b6b4e1e9f0c4a548ed315cbd2f102b32ba4a096231b3ea61787c80d41a8bf" "59e8dd2ea1b7e136fa16446bf542e42eb732e4c35ef84cff53a4051bb3b12e91" default)))
  '(package-selected-packages
    (quote
-    (all-the-icons use-package restclient projectile powerline org mode-icons magit-gitflow f auto-compile))))
+    (js2-mode all-the-icons use-package restclient projectile powerline org mode-icons magit-gitflow f auto-compile))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
