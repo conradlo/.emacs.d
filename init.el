@@ -1,3 +1,5 @@
+;; Time-stamp: <2017-01-08 18:37:13 slo>
+
 ;; melpa package source
 (require 'package)
 (add-to-list 'package-archives
@@ -45,7 +47,18 @@
 (setq js2-basic-offset 2)
 
 (global-linum-mode t)
-(set-face-foreground 'linum "#212931")
+(set-face-foreground 'linum "#6e6e6e")
+
+;; markdown
+(use-package markdown-mode
+  :ensure t)
+
+;; Time Stamp
+(add-hook 'before-save-hook 'time-stamp)
+(defun cl/insert-time-stamp-string()
+  "Insert time stamp string at current position"
+  (interactive)
+  (insert "Time-stamp:  < >"))
 
 ;; version control
 (use-package magit
@@ -91,7 +104,7 @@
     ("607b6b4e1e9f0c4a548ed315cbd2f102b32ba4a096231b3ea61787c80d41a8bf" "59e8dd2ea1b7e136fa16446bf542e42eb732e4c35ef84cff53a4051bb3b12e91" default)))
  '(package-selected-packages
    (quote
-    (js2-mode all-the-icons use-package restclient projectile powerline org mode-icons magit-gitflow f auto-compile))))
+    (markdown-mode js2-mode all-the-icons use-package restclient projectile powerline org mode-icons magit-gitflow f auto-compile))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -102,6 +115,6 @@
  '(mode-line-inactive ((t (:background "#212931" :foreground "#eeeeec"))))
  '(region ((t (:background "HotPink4" :foreground "#e1e1e0")))))
 
-;; ref
-;; https://gitlab.com/buildfunthings/emacs-config/blob/master/loader.org
-;; http://pages.sachachua.com/.emacs.d/Sacha.html#org332b2fd
+
+;; Enable C-c C-u to upper case whole regoin
+(put 'upcase-region 'disabled nil)
