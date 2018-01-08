@@ -1,3 +1,6 @@
+# ignore all except
+
 /*
 !init.el
+!settings.org
 !README.md
